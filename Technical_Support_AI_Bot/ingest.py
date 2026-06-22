@@ -11,8 +11,8 @@ from chromadb.utils import embedding_functions
 load_dotenv()
 
 SOURCE_PDF_PATH = os.getenv("SOURCE_PDF_PATH")
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CHROMA_PERSIST_DIR = os.path.join(BASE_DIR, "chroma_store")
+CHROMA_PERSIST_DIR = os.getenv("CHROMA_PERSIST_DIR")
+
 COLLECTION_NAME = "upwork_api_docs"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
