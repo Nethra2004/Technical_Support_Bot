@@ -10,7 +10,7 @@ from chromadb.utils import embedding_functions
 
 load_dotenv()
 
-SOURCE_PDF_PATH = ""
+SOURCE_PDF_PATH = "Technical_Support_AI_Bot/API Documentation Partial.pdf"
 CHROMA_PERSIST_DIR = "Technical_Support_AI_Bot/chroma_store"
 
 COLLECTION_NAME = "upwork_api_docs"
