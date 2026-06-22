@@ -94,6 +94,7 @@ Do not add any explanation, apology, suggestion, or additional text.
 """
 
 def get_collection():
+
     client = chromadb.PersistentClient(
         path=CHROMA_PERSIST_DIR
     )
@@ -104,24 +105,21 @@ def get_collection():
         )
     )
 
-   try:
-
+    try:
         return client.get_collection(
             name=COLLECTION_NAME,
             embedding_function=embedding_function,
         )
 
     except Exception:
-
-        print("Collection not found.")
-        print("Building vector database...")
+        print("Collection not found. Building vector database...")
 
         build_vector_database()
 
-    return client.get_collection(
-        name=COLLECTION_NAME,
-        embedding_function=embedding_function,
-    )
+        return client.get_collection(
+            name=COLLECTION_NAME,
+            embedding_function=embedding_function,
+        )
 
 def fetch_chunk(collection, chunk_index):
 
