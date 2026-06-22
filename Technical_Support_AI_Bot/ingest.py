@@ -11,7 +11,7 @@ from chromadb.utils import embedding_functions
 load_dotenv()
 
 SOURCE_PDF_PATH = ""
-CHROMA_PERSIST_DIR = ""
+CHROMA_PERSIST_DIR = "Technical_Support_AI_Bot/chroma_store"
 
 COLLECTION_NAME = "upwork_api_docs"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
