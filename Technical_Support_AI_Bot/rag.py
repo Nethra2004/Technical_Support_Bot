@@ -9,7 +9,7 @@ from ingest import main
 
 load_dotenv()
 
-CHROMA_PERSIST_DIR = os.getenv("CHROMA_PERSIST_DIR")
+CHROMA_PERSIST_DIR = "Technical_Support_AI_Bot/chroma_store"
 
 COLLECTION_NAME = "upwork_api_docs"
 
