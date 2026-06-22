@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 import chromadb
 from chromadb.utils import embedding_functions
+from ingest import build_vector_database
 
 load_dotenv()
 
@@ -102,6 +103,20 @@ def get_collection():
             model_name=EMBEDDING_MODEL_NAME
         )
     )
+
+   try:
+
+        return client.get_collection(
+            name=COLLECTION_NAME,
+            embedding_function=embedding_function,
+        )
+
+    except Exception:
+
+        print("Collection not found.")
+        print("Building vector database...")
+
+        build_vector_database()
 
     return client.get_collection(
         name=COLLECTION_NAME,
