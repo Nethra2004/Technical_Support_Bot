@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 import chromadb
 from chromadb.utils import embedding_functions
-from ingest import build_vector_store
+from ingest import main
 
 load_dotenv()
 
@@ -114,7 +114,7 @@ def get_collection():
     except Exception:
         print("Collection not found. Building vector database...")
 
-        build_vector_store()
+        main()
 
         return client.get_collection(
             name=COLLECTION_NAME,
